@@ -1,0 +1,29 @@
+{% extends 'room/layout.html' %}
+
+{%  block title %}
+Комнаты
+{%  endblock %}
+{%  block content %}
+
+<div class="tab">
+    {% for item in rooms %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.name}}</h5>
+
+            <a href="{{ item.get_absolute_url }}" class="card-link">инфо</a>
+            <a href="{{  item.dell }}" class="card-link">удалить</a>
+            <a href="{{ item.addsens }}" class="card-link">+датчик</a>
+        </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+
+<button class="btnn" type="submit" onclick="window.location.href='{% url 'addroom' %}'">add room</button>
+
+
+{% endblock %}
+

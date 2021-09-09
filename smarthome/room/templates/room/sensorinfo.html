@@ -1,0 +1,24 @@
+{% extends 'room/layout.html' %}
+
+
+{%  block title %}
+
+{% for item in sensor %}
+
+{{item.name}}
+
+{% endfor %}
+
+{%  endblock %}
+
+{%  block content %}
+
+{% for item in sensor %}
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Название: {{item.name}}</li>
+    </ul>
+</div>
+{% endfor %}
+{% endblock %}

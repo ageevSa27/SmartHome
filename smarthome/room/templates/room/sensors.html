@@ -1,0 +1,27 @@
+{% extends 'room/layout.html' %}
+
+{%  block title %}
+Датчики
+{%  endblock %}
+{%  block content %}
+
+<div class="tab">
+     {% for item in sensors %}
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.name}}</h5>
+                <p class="card-text">
+
+
+                </p>
+                <a href="{{ item.get_absolute_url }}" class="card-link">инфо</a>
+                <a href="{{  item.dell }}" class="card-link">удлить</a>
+            </div>
+        </div>
+
+
+    {% endfor %}
+</div>
+<button class="btnn" onclick="window.location.href = '{% url 'addsensor' %}';">add sensor</button>
+{% endblock %}

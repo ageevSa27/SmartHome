@@ -1,0 +1,48 @@
+{% extends 'room/layout.html' %}
+
+
+{%  block title %}
+
+{% for item in room %}
+
+{{item.name}}
+
+{% endfor %}
+
+{%  endblock %}
+
+{%  block content %}
+<div class="row">
+    <div class="col-sm-4">
+
+        {% for item in room %}
+        <h3>{{ item.name }}</h3>
+
+
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Ширина: {{item.x}}</li>
+                <li class="list-group-item">Длинна: {{item.y}}</li>
+                <li class="list-group-item">Высота: {{item.h}}</li>
+            </ul>
+        </div>
+
+
+        {% endfor %}
+    </div>
+    <div class="col-sm-4">
+        <h3>Датчики</h3>
+        {% for item in room %}
+            {% for sens in item.sensors.all%}
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{sens.name}}</li>
+                </ul>
+            </div>
+
+
+        {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

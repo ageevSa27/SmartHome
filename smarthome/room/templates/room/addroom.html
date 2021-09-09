@@ -1,0 +1,16 @@
+{% extends 'room/layout.html' %}
+{%  block title %}
+Добавить комнату
+{%  endblock %}
+{% block content%}
+
+
+<form action="{% url 'addroom' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p }}
+
+
+    <button type="submit">Save</button>
+
+</form>
+{% endblock %}

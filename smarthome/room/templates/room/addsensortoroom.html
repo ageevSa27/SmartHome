@@ -1,0 +1,16 @@
+{% extends 'room/layout.html' %}
+{%  block title %}
+выберите датчик
+{%  endblock %}
+
+{% block content %}
+<form action="{% url 'sensortoroom'  room_id%}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+
+
+    <br><button class="btnn" type="submit">Save</button>
+
+</form>
+{% endblock %}

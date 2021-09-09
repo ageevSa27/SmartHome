@@ -1,0 +1,16 @@
+{% extends 'room/layout.html' %}
+{%  block title %}
+Добавить Датчик
+{%  endblock %}
+{% block content%}
+
+
+<form action="{% url 'addsensor' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p }}
+
+
+    <button type="submit">Save</button>
+
+</form>
+{% endblock %}
